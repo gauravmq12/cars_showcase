@@ -13,26 +13,26 @@ export default function Home() {
   const [loading, setloading] = useState(false);
 
   // search states
-  const [manufacturer, setmanufacturer] = useState("");
-  const [model, setmodel] = useState("");
+  const [manufacturer, setManufacturer] = useState("");
+  const [model, setModel] = useState("");
 
   //filter states
   const [fuel, setFuel] = useState("");
   const [year, setYear] = useState(2022);
 
   // pagination state
-  const [limit, setLimit] = useState(10);
+  const [limit, setlimit] = useState(10);
 
   const getCars = async () => {
     setloading(true);
 
     try {
       const result = await fetchCars({
-        manufacturer: manufacturer || "",
+        manufacturer: manufacturer || '',
         year: year || 2022,
-        fuel: fuel || "",
+        fuel: fuel || '',
         limit: limit || 10,
-        model: model || "",
+        model: model || '',
       });
   
     setallCars(result);
@@ -97,7 +97,7 @@ export default function Home() {
               <ShowMore 
                 pageNumber={limit / 10}
                 isNext={limit > allCars.length}
-                setlimit={setLimit}
+                setLimit={setlimit}
               />
             </section>
           ): (

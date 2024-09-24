@@ -1,5 +1,6 @@
 "use client";
 
+import Router from '@/node_modules/next/router';
 import { ShowMoreProps } from '@/types/index';
 import { updateSearchParams } from '@/utils/index';
 import { useRouter } from 'next/navigation';
@@ -17,7 +18,7 @@ const ShowMore = ({ pageNumber, isNext, setLimit }: ShowMoreProps) => {
         {!isNext && (
             <CustomButton 
                 title="ShowMore"
-                btnType="button"
+                btnType='button'
                 containerStyles="bg-primary-blue rounded-full 
                 text-white"
                 handleClick={handleNavigation}
