@@ -37,7 +37,7 @@ export const generateCarImageUrl = (car: CarProps, angle?
 
     const { make, year, model } = car
 
-    url.searchParams.append('customer', process.env.NEXT_PUBLIC_IMAGIN_API_KEY || '');
+    url.searchParams.append('customer', process.env.NEXT_PUBLIC_IMAGIN_API_KEY || 'images.remotePatterns');
     url.searchParams.append('make', make);
     url.searchParams.append('modelFamily', model.split(" ")[0]);
     url.searchParams.append('zoomType', 'fullscreen');
